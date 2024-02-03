@@ -1,0 +1,12 @@
+<ion-app>
+  <ion-router-outlet></ion-router-outlet>
+  <div *ngIf="(isUserLoggedIn$|async); else loading">
+    <pre>{{user|json}}</pre>
+  </div>
+
+  <ng-template #loading>
+    <ion-item-divider>
+      <ion-spinner></ion-spinner>
+    </ion-item-divider>
+  </ng-template>
+</ion-app>
